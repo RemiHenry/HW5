@@ -2,30 +2,29 @@
    Exercise 1 JavaScript code
 */
 
-const square = {
-    side: 2,
-    perimeter: function() {
+class Square {
+    constructor(side) {
+        this.side = side;
+    }
+    perimeter() {
         return this.side * 4;
-    },
-    area: function() {
+    }
+    area() {
         return this.side * this.side;
-    },
-    diagonal: function() {
+    }
+    diagonal() {
         return Math.sqrt(2 * this.side * this.side);
-    },
-    describe: function() {
+    }
+    describe() {
         console.log(`Square with side ${this.side} has perimeter of ${this.perimeter()}, area of ${this.area()}, and diagonal of ${this.diagonal()}.`);
     }
 }
 
-const square1 = Object.create(square);
-square1.side = 2;
+const square1 = new Square(2);
 square1.describe();
 
-const square2 = Object.create(square);
-square2.side = 3;
+const square2 = new Square(3);
 square2.describe();
 
-const square3 = Object.create(square);
-square3.side = 4;
+const square3 = new Square(4);
 square3.describe();
